@@ -1,143 +1,52 @@
 import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
+// 참조: https://black-glasses.tistory.com/entry/Flutter-Prefer-const-with-constant-constructors-%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // debug 표시 없애기
-      title: 'BBANTO',
-      home: Grade()
-    );
-  }
-}
-
-class Grade extends StatelessWidget {
-  const Grade({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.amber[800],
-      appBar: AppBar(
-        title: Text('BBANTO'),
-        backgroundColor: Colors.amber[700],
-        centerTitle: true,
-        elevation: 0.0,
-      ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/imgs/test1.jpg'),
-                radius: 60.0,
-              ),
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.grey[850],
-              thickness: 0.5,
-              // endIndent: 30,
-            ),
-            Text('NAME',
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('BBANTO',
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 2.0,
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text('BBANTO POWER LEVEL',
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('14',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Row(
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
+      home: Scaffold(
+        backgroundColor: Color(0xFF181818), /* ARGB */
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 40
+          ),
+          child: Column(
+              children: [
                 SizedBox(
-                  width: 10.0,
+                  height: 80,
                 ),
-                Text('using lightsaber',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    letterSpacing: 1.0
-                  ),
-                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text('Hey, Selena',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text('Welcome back',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.5),
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                )
               ],
-            ),
-            Row(
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('face hero tatto',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      letterSpacing: 1.0
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('fire flames',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      letterSpacing: 1.0
-                  ),
-                ),
-              ],
-            ),
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/imgs/test2.jpg'),
-                radius: 40.0,
-                backgroundColor: Colors.transparent, // 백그라운드가 투명 이마지 일때
-              ),
             )
-          ],
-        ),
+        )
       ),
     );
   }

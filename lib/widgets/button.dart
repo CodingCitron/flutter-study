@@ -20,7 +20,7 @@ class Button extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50,),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 50,),
         child: Text(
           text,
           style: TextStyle(
